@@ -76,6 +76,11 @@ describe('utils', function() {
       });
     });
 
+    describe('joinPath(filepath)', function() {
+      it.skip('should join filepaths', function() {
+      })
+    });
+
     describe('normalizeInputSource(source)', function() {
       it('should normalize strings to an instanceOf Buffer', function() {
         var normalized = utils.normalizeInputSource('some string');
