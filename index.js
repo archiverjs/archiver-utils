@@ -9,6 +9,7 @@ var fs = require('fs');
 var path = require('path');
 var nutil = require('util');
 var lazystream = require('lazystream');
+var normalizePath = require('normalize-path');
 var _ = require('lodash');
 
 var Stream = require('stream').Stream;
@@ -73,24 +74,6 @@ utils.isStream = function(source) {
   return source instanceof Stream;
 };
 
-utils.joinPath = function() {
-  var filepath = '';
-
-  for (var i = 0; i < arguments.length; i++) {
-    var segment = arguments[i];
-    assertPath(segment);
-    if (segment) {
-      if (!filepath) {
-        filepath += segment;
-      } else {
-        filepath += '/' + segment;
-      }
-    }
-  }
-
-  return filepath;
-};
-
 utils.lazyReadStream = function(filepath) {
   return new lazystream.Readable(function() {
     return fs.createReadStream(filepath);
@@ -112,18 +95,16 @@ utils.normalizeInputSource = function(source) {
   return source;
 };
 
-utils.sanitizePath = function() {
-  var filepath = utils.joinPath.apply(utils, arguments);
-  return filepath.replace(/[\\\/]+/g, '/').replace(/^\w+:/, '').replace(/^(\.\.\/|\/)+/, '');
+utils.sanitizePath = function(filepath) {
+  return normalizePath(filepath, false).replace(/^\w+:/, '').replace(/^(\.\.\/|\/)+/, '');
 };
 
 utils.trailingSlashIt = function(str) {
   return str.slice(-1) !== '/' ? str + '/' : str;
 };
 
-utils.unixifyPath = function() {
-  var filepath = path.join.apply(path, arguments);
-  return filepath.replace(/\\/g, '/').replace(/^\w+:/, '');
+utils.unixifyPath = function(filepath) {
+  return normalizePath(filepath, false).replace(/^\w+:/, '');
 };
 
 utils.walkdir = function(dirpath, base, callback) {
