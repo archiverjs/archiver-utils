@@ -36,7 +36,7 @@ utils.collectStream = function(source, callback) {
   });
 
   source.on('end', function() {
-    var buf = new Buffer(size, 'utf8');
+    var buf = new Buffer(size);
     var offset = 0;
 
     collection.forEach(function(data) {
