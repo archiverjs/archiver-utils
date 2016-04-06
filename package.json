@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "glob": "^7.0.0",
+    "graceful-fs": "^4.1.0",
     "lazystream": "^0.1.0",
     "lodash": "^4.8.0",
     "normalize-path": "^2.0.0",

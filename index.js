@@ -5,7 +5,7 @@
  * Licensed under the MIT license.
  * https://github.com/archiverjs/archiver-utils/blob/master/LICENSE
  */
-var fs = require('fs');
+var fs = require('graceful-fs');
 var path = require('path');
 var nutil = require('util');
 var lazystream = require('lazystream');
