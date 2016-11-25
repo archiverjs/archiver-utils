@@ -149,7 +149,8 @@ utils.walkdir = function(dirpath, base, callback) {
             res.forEach(function(dirEntry) {
               results.push(dirEntry);
             });
-            next();
+		  
+            next();  
           });
         } else {
           next();
