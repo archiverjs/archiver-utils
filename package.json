@@ -3,7 +3,7 @@
   "version": "1.3.0",
   "license": "MIT",
   "description": "utility functions for archiver",
-  "homepage": "https://github.com/archiverjs/archiver-utils",
+  "homepage": "https://github.com/archiverjs/archiver-utils#readme",
   "author": {
     "name": "Chris Talkington",
     "url": "http://christalkington.com/"
@@ -15,7 +15,6 @@
   "bugs": {
     "url": "https://github.com/archiverjs/archiver-utils/issues"
   },
-  "homepage": "https://github.com/archiverjs/archiver-utils#readme",
   "keywords": [
     "archiver",
     "utils"
