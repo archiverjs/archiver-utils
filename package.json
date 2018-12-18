@@ -34,7 +34,6 @@
     "glob": "^7.0.0",
     "graceful-fs": "^4.1.0",
     "lazystream": "^1.0.0",
-    "lodash.assign": "^4.2.0",
     "lodash.defaults": "^4.2.0",
     "lodash.difference": "^4.5.0",
     "lodash.flatten": "^4.4.0",
