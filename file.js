@@ -14,7 +14,7 @@ var _ = { flatten: require('lodash.flatten'),
           toArray: require('lodash.toarray'),
           isPlainObject: require('lodash.isplainobject'),
           defaults: require('lodash.defaults'),
-          extend: require('lodash.assign')
+          extend: Object.assign
         }
 var glob = require('glob');
 
