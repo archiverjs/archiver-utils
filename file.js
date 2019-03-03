@@ -13,7 +13,6 @@ var difference = require('lodash.difference');
 var union = require('lodash.union');
 var toArray = require('lodash.toarray');
 var isPlainObject = require('lodash.isplainobject');
-var defaults = require('lodash.defaults');
 
 var glob = require('glob');
 
@@ -89,11 +88,11 @@ file.expand = function() {
 
 // Build a multi task "files" object dynamically.
 file.expandMapping = function(patterns, destBase, options) {
-  options = defaults({}, options, {
+  options = Object.assign({
     rename: function(destBase, destPath) {
       return path.join(destBase || '', destPath);
     }
-  });
+  }, options);
   var files = [];
   var fileByDest = {};
   // Find all files matching pattern, using passed-in options.
