@@ -11,7 +11,6 @@ var path = require('path');
 var flatten = require('lodash.flatten');
 var difference = require('lodash.difference');
 var union = require('lodash.union');
-var toArray = require('lodash.toarray');
 var isPlainObject = require('lodash.isplainobject');
 
 var glob = require('glob');
@@ -51,8 +50,7 @@ file.exists = function() {
 };
 
 // Return an array of all file paths that match the given wildcard patterns.
-file.expand = function() {
-  var args = toArray(arguments);
+file.expand = function(...args) {
   // If the first argument is an options object, save those options to pass
   // into the File.prototype.glob.sync method.
   var options = isPlainObject(args[0]) ? args.shift() : {};
