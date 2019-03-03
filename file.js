@@ -14,7 +14,6 @@ var union = require('lodash.union');
 var toArray = require('lodash.toarray');
 var isPlainObject = require('lodash.isplainobject');
 var defaults = require('lodash.defaults');
-var extend = Object.assign;
 
 var glob = require('glob');
 
@@ -157,7 +156,7 @@ file.normalizeFilesArray = function(data) {
     }
   }).map(function(obj) {
     // Build options object, removing unwanted properties.
-    var expandOptions = extend({}, obj);
+    var expandOptions = Object.assign({}, obj);
     delete expandOptions.src;
     delete expandOptions.dest;
 
@@ -165,9 +164,9 @@ file.normalizeFilesArray = function(data) {
     if (obj.expand) {
       return file.expandMapping(obj.src, obj.dest, expandOptions).map(function(mapObj) {
         // Copy obj properties to result.
-        var result = extend({}, obj);
+        var result = Object.assign({}, obj);
         // Make a clone of the orig obj available.
-        result.orig = extend({}, obj);
+        result.orig = Object.assign({}, obj);
         // Set .src and .dest, processing both as templates.
         result.src = mapObj.src;
         result.dest = mapObj.dest;
@@ -180,9 +179,9 @@ file.normalizeFilesArray = function(data) {
     }
 
     // Copy obj properties to result, adding an .orig property.
-    var result = extend({}, obj);
+    var result = Object.assign({}, obj);
     // Make a clone of the orig obj available.
-    result.orig = extend({}, obj);
+    result.orig = Object.assign({}, obj);
 
     if ('src' in result) {
       // Expose an expand-on-demand getter method as .src.
