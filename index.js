@@ -85,11 +85,11 @@ utils.normalizeInputSource = function(source) {
     return new Buffer(0);
   } else if (typeof source === 'string') {
     return new Buffer(source);
-  } else if (utils.isStream(source) && !source._readableState) {
-    var normalized = new PassThrough();
-    source.pipe(normalized);
-
-    return normalized;
+  } else if (utils.isStream(source)) {
+    // Always pipe through a PassThrough stream to guarantee pausing the stream if it's already flowing,
+    // since it will only be processed in a (distant) future iteration of the event loop, and will lose
+    // data if already flowing now.
+    return source.pipe(new PassThrough());
   }
 
   return source;
