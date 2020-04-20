@@ -71,7 +71,7 @@ utils.defaults = function(object, source, guard) {
 };
 
 utils.isStream = function(source) {
-  return source instanceof Stream;
+  return source && typeof source.pipe === 'function'
 };
 
 utils.lazyReadStream = function(filepath) {
@@ -89,7 +89,9 @@ utils.normalizeInputSource = function(source) {
     // Always pipe through a PassThrough stream to guarantee pausing the stream if it's already flowing,
     // since it will only be processed in a (distant) future iteration of the event loop, and will lose
     // data if already flowing now.
-    return source.pipe(new PassThrough());
+
+    //TODO Make this working...currently this does not work in streaming exceljs write in browser
+    // return source.pipe(new PassThrough());
   }
 
   return source;
