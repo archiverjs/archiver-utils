@@ -36,7 +36,7 @@ utils.collectStream = function(source, callback) {
   });
 
   source.on('end', function() {
-    var buf = new Buffer(size);
+    var buf = Buffer.alloc(size);
     var offset = 0;
 
     collection.forEach(function(data) {
@@ -82,9 +82,9 @@ utils.lazyReadStream = function(filepath) {
 
 utils.normalizeInputSource = function(source) {
   if (source === null) {
-    return new Buffer(0);
+    return Buffer.alloc(0);
   } else if (typeof source === 'string') {
-    return new Buffer(source);
+    return Buffer.from(source);
   } else if (utils.isStream(source)) {
     // Always pipe through a PassThrough stream to guarantee pausing the stream if it's already flowing,
     // since it will only be processed in a (distant) future iteration of the event loop, and will lose
