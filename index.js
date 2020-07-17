@@ -7,7 +7,6 @@
  */
 var fs = require('graceful-fs');
 var path = require('path');
-var nutil = require('util');
 var lazystream = require('lazystream');
 var normalizePath = require('normalize-path');
 var defaults = require('lodash.defaults');
@@ -17,12 +16,6 @@ var PassThrough = require('readable-stream').PassThrough;
 
 var utils = module.exports = {};
 utils.file = require('./file.js');
-
-function assertPath(path) {
-  if (typeof path !== 'string') {
-    throw new TypeError('Path must be a string. Received ' + nutils.inspect(path));
-  }
-}
 
 utils.collectStream = function(source, callback) {
   var collection = [];
