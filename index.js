@@ -89,7 +89,10 @@ utils.normalizeInputSource = function(source) {
 };
 
 utils.sanitizePath = function(filepath) {
-  return normalizePath(filepath, false).replace(/^\w+:/, '').replace(/^(\.\.\/|\/)+/, '');
+  return normalizePath(filepath, false)
+      .replace(/^\w+:/, '')
+      .replace(/^(\.\.\/)+/, '')
+      .replace(/^(\/)+/, '/');
 };
 
 utils.trailingSlashIt = function(str) {
