@@ -89,9 +89,10 @@ utils.normalizeInputSource = function(source) {
     // Always pipe through a PassThrough stream to guarantee pausing the stream if it's already flowing,
     // since it will only be processed in a (distant) future iteration of the event loop, and will lose
     // data if already flowing now.
+    var normalized = new PassThrough();
+    source.pipe(normalized);
 
-    //TODO Make this working...currently this does not work in streaming exceljs write in browser
-    // return source.pipe(new PassThrough());
+    return normalized;
   }
 
   return source;
