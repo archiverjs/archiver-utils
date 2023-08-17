@@ -1,5 +1,7 @@
 ## Changelog
 
+**3.0.3** — <small> August 17, 2027 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/3.0.0...3.0.3)
+
 **3.0.0** — <small> July 18, 2020 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/2.1.0...3.0.0)
 
 * Bump mkdirp from 0.5.1 to 1.0.4 (#28) @dependabot
@@ -14,17 +16,5 @@
 * Remove unused function and module (#19) @exoego
 * Address Buffer constructor deprecation (#18) @exoego
 * normalizeInputSource: always pipe stream through a PassThrough stream (#17) @jntesteves
-
-
-**2.1.0** — <small> July 19, 2019 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/2.0.0...2.1.0)
-
-- other: less lodash (#16)
-- other: update dependencies
-
-**2.0.0** — <small> August 22, 2018 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/1.3.0...2.0.0)
-
-- breaking: follow node LTS, remove support for versions under 6.
-- other: remove unused lodash dependence (#13)
-- test: now targeting node v10
 
 [Release Archive](https://github.com/archiverjs/archiver-utils/releases)
