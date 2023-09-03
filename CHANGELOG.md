@@ -1,5 +1,7 @@
 ## Changelog
 
+**4.0.1** — <small> September 3, 2023 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/4.0.0...4.0.1)
+
 **4.0.0** — <small> September 2, 2023 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/3.0.4...4.0.0)
 
 **3.0.4** — <small> September 1, 2023 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/3.0.3...3.0.4)
