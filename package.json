@@ -1,6 +1,6 @@
 {
   "name": "archiver-utils",
-  "version": "3.0.4",
+  "version": "4.0.0",
   "license": "MIT",
   "description": "utility functions for archiver",
   "homepage": "https://github.com/archiverjs/archiver-utils#readme",
