@@ -9,7 +9,7 @@ var fs = require('graceful-fs');
 var path = require('path');
 var lazystream = require('lazystream');
 var normalizePath = require('normalize-path');
-var defaults = require('lodash.defaults');
+var defaults = require('lodash/defaults');
 
 var Stream = require('stream').Stream;
 var PassThrough = require('readable-stream').PassThrough;
