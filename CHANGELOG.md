@@ -1,6 +1,8 @@
 ## Changelog
 
-**5.0.1** — <small> March 9, 2024 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/5.0.0...5.0.1)
+**5.0.2** — <small> March 9, 2024 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/5.0.1...5.0.2)
+
+**5.0.1** — <small> February 26, 2024 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/5.0.0...5.0.1)
 
 **5.0.0** — <small> February 26, 2024 </small> — [Diff](https://github.com/archiverjs/archiver-utils/compare/4.0.2...5.0.0)
 
