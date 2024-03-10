@@ -7,6 +7,7 @@
  */
 var fs = require('graceful-fs');
 var path = require('path');
+var isStream = require('is-stream');
 var lazystream = require('lazystream');
 var normalizePath = require('normalize-path');
 var defaults = require('lodash/defaults');
@@ -64,7 +65,7 @@ utils.defaults = function(object, source, guard) {
 };
 
 utils.isStream = function(source) {
-  return source instanceof Stream;
+  return isStream(source);
 };
 
 utils.lazyReadStream = function(filepath) {
