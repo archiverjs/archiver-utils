@@ -31,7 +31,7 @@
     "test": "mocha --reporter dot"
   },
   "dependencies": {
-    "glob": "^10.0.0",
+    "glob": "^11.0.0",
     "graceful-fs": "^4.2.0",
     "is-stream": "^2.0.1",
     "lazystream": "^1.0.0",
