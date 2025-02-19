@@ -13,7 +13,7 @@ var difference = require('lodash/difference');
 var union = require('lodash/union');
 var isPlainObject = require('lodash/isPlainObject');
 
-var glob = require('glob');
+var { globSync } = require('tinyglobby');
 
 var file = module.exports = {};
 
@@ -62,7 +62,7 @@ file.expand = function(...args) {
   // Return all matching filepaths.
   var matches = processPatterns(patterns, function(pattern) {
     // Find all matching files for this pattern.
-    return glob.sync(pattern, options);
+    return globSync(pattern, options);
   });
   // Filter result set?
   if (options.filter) {
