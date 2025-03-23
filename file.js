@@ -13,7 +13,7 @@ var difference = require('lodash/difference');
 var union = require('lodash/union');
 var isPlainObject = require('lodash/isPlainObject');
 
-var glob = require('glob');
+var tinyglobby = require('tinyglobby');
 
 var file = module.exports = {};
 
@@ -52,7 +52,7 @@ file.exists = function() {
 // Return an array of all file paths that match the given wildcard patterns.
 file.expand = function(...args) {
   // If the first argument is an options object, save those options to pass
-  // into the File.prototype.glob.sync method.
+  // into the tinyglobby.globSync method.
   var options = isPlainObject(args[0]) ? args.shift() : {};
   // Use the first argument if it's an Array, otherwise convert the arguments
   // object to an array and use that.
@@ -62,7 +62,7 @@ file.expand = function(...args) {
   // Return all matching filepaths.
   var matches = processPatterns(patterns, function(pattern) {
     // Find all matching files for this pattern.
-    return glob.sync(pattern, options);
+    return tinyglobby.globSync(pattern, options);
   });
   // Filter result set?
   if (options.filter) {
